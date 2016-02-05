@@ -178,9 +178,9 @@ echo
 		sleep 10s
 		echo "Deploying MR app to Node$i..."
 		cd projects
-		mvn clean package -pl JDG_MR jboss-as:deploy -pl JDG_MR -Djboss.as-hostname=127.0.0.1 -Djboss-as.port=$((9999+(i*100))) -Djboss-as.username=$USER -Djboss-as.password=$PASSWORD
+		mvn clean package -pl JDG_MR_WEB jboss-as:deploy -pl JDG_MR_WEB -Djboss.as-hostname=127.0.0.1 -Djboss-as.port=$((9999+(i*100))) -Djboss-as.username=$USER -Djboss-as.password=$PASSWORD
 		cd ..
-		echo "MR App running on Node$i"
+		echo "MR_WEB App running on Node$i"
 	done
 	echo "Setup completed!"
 	xdg-open 'http://localhost:8080/JDG_MR_WEB/'
